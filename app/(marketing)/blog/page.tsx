@@ -10,7 +10,7 @@ export default function BlogPage() {
       <div>
         <div className="space-y-4">
           <h1 className="font-extrabold text-4xl lg:text-5xl tracking-tight">
-            Blog🚀Blog🚀Blog🚀
+            Blog🚀
           </h1>
           <p className="text-muted-foreground text-xl">
             ContentLayerとMDXで書いています。
