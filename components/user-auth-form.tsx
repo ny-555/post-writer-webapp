@@ -1,10 +1,16 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { buttonVariants } from "./ui/button";
 import { Icon } from "./icons";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function UserAuthForm() {
+  const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
+
   return (
     <div className="grid gap-6">
       <form>
@@ -28,8 +34,18 @@ export default function UserAuthForm() {
           </span>
         </div>
       </div>
-      <button className={cn(buttonVariants({ variant: "outline" }))}>
-        <Icon.github />
+      <button
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => {
+          setIsGithubLoading(true);
+          signIn("github");
+        }}
+      >
+        {isGithubLoading ? (
+          <Icon.spinner className="animate-spin" />
+        ) : (
+          <Icon.github />
+        )}
         GitHub
       </button>
     </div>
