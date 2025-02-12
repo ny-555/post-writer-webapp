@@ -1,5 +1,7 @@
 import { NextAuthOptions } from "next-auth";
 import Github from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
+
 // import Google from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
@@ -8,7 +10,10 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-    // Google({}),
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
   ],
   pages: {
     signIn: "/login",
