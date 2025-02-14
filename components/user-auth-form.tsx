@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { buttonVariants } from "./ui/button";
-import { Icon } from "./icons";
+import { Icon } from "./icon";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
