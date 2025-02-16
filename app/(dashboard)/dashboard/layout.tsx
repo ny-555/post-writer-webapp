@@ -16,7 +16,7 @@ export default function DashboardLayout({
         </div>
       </header>
       <div className="container mx-auto px-8 grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
-        <aside className="hidden md:flex w-[200px] flex-col">
+        <aside className="hidden md:flex flex-col">
           <DashboardNav items={dashboardConfig.sidebarNav} />
         </aside>
         <main className="flex flex-col w-full flex-1 overflow-hidden">
