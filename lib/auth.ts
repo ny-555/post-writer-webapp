@@ -2,7 +2,10 @@ import { NextAuthOptions } from "next-auth";
 import Github from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { db } from "./db";
+// import { db } from "./db";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -18,7 +21,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 
-  adapter: PrismaAdapter(db),
+  adapter: PrismaAdapter(prisma),
 
   pages: {
     signIn: "/login",
