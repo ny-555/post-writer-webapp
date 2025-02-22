@@ -17,9 +17,7 @@ export const authOptions: NextAuthOptions = {
       allowDangerousEmailAccountLinking: true,
     }),
   ],
-
   adapter: PrismaAdapter(db),
-
   pages: {
     signIn: "/login",
   },
@@ -28,9 +26,9 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         return { ...token, id: user.id };
       }
+
       return token;
     },
-
     async session({ token, session }) {
       if (token) {
         session.user.id = token.id;
@@ -42,7 +40,6 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-
   session: {
     strategy: "jwt",
   },
