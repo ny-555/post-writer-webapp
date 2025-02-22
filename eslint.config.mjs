@@ -12,9 +12,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    files: ["next.config.js"], // next.config.js のみに適用
+    files: ["next.config.js"],
     rules: {
-      "@typescript-eslint/no-require-imports": "off", // require() を許可
+      "@typescript-eslint/no-require-imports": "off", // next.config.jsのみrequire()を許可
     },
   },
 ];
